@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.Region?>
 
 
-<BorderPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane fx:id="borderPaneUserPage" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.userPageController">
    <bottom>
       <AnchorPane prefHeight="44.0" prefWidth="900.0" BorderPane.alignment="CENTER">
          <children>

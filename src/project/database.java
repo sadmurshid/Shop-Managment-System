@@ -39,6 +39,11 @@ public class database {
 
     }
 
+    public database()
+    {
+
+    }
+
 /*  Method Name: createTableNameAndParameter
     Parameter  : null
     Return     : void
@@ -214,5 +219,104 @@ public class database {
         return creationSuccessful;
     }
 
+    public boolean loginAllowed(String userName, String password)
+    {
+        boolean allowed=false;
+        String tempUser=null, tempPassword=null;
+//        System.out.println("user : "+userName+" password : "+password);
+        try{
+            sql="use "+databaseName;
+            statement.executeUpdate(sql);
+            sql="select name, password from user order by user_ID;";
+            resultSet=statement.executeQuery(sql);
+            while(resultSet.next())
+            {
+                tempUser=resultSet.getString("name");
+                tempPassword=resultSet.getString("password");
+                System.out.println(tempUser+" "+tempPassword);
+                if(tempUser.equals(userName) && tempPassword.equals(password))
+                    return true;
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return allowed;
+    }
+
+    private String userTableGetUserName(String userID)
+    {
+        String userName=null;
+        String ID=null;
+        try{
+            sql="use "+databaseName;
+            statement.executeUpdate(sql);
+            sql="select name, userID from user order by userID;";
+            resultSet=statement.executeQuery(sql);
+            while(resultSet.next())
+            {
+                userName=resultSet.getString("name");
+                ID=resultSet.getString("user_ID");
+                if(userID.equals(ID))
+                {
+                    return userName;
+                }
+            }
+        }
+        catch(Exception e){
+            e.printStackTrace();
+        }
+        return userName;
+    }
+
+    private String userTableGetPassword(String userID)
+    {
+        String password=null;
+        String ID=null;
+        try{
+            sql="use "+databaseName;
+            statement.executeUpdate(sql);
+            sql="select password, userID from user order by userID;";
+            resultSet=statement.executeQuery(sql);
+            while(resultSet.next())
+            {
+                password=resultSet.getString("password");
+                ID=resultSet.getString("user_ID");
+                if(userID.equals(ID))
+                {
+                    return password;
+                }
+            }
+        }
+        catch(Exception e){
+            e.printStackTrace();
+        }
+
+        return password;
+    }
+
+    public String userTableGetBackgroundColor(String userName)
+    {
+        String color=null;
+        String tempName;
+        try{
+            sql="use "+databaseName;
+            statement.executeUpdate(sql);
+            sql="select backgroundColor, name from user order by name;";
+            resultSet=statement.executeQuery(sql);
+            while(resultSet.next())
+            {
+                color=resultSet.getString("backgroundColor");
+                tempName=resultSet.getString("name");
+                if(tempName.equals(userName))
+                {
+                    return color;
+                }
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
+        return color;
+    }
 
 }
