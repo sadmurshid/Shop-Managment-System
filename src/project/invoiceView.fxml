@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="700.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.InvoiceViewController">
+   <children>
+      <ImageView fx:id="invoiceShopLogoImageView" fitHeight="100.0" fitWidth="160.0" layoutX="270.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true" />
+      <Label fx:id="invoiceShopNameLabel" layoutX="512.0" layoutY="14.0" minWidth="450.0" prefHeight="40.0" prefWidth="305.0" text="SHOP NAME" textAlignment="CENTER">
+         <font>
+            <Font name="Arial" size="30.0" />
+         </font>
+      </Label>
+      <Label fx:id="invoiceOwnerNameLabel" layoutX="581.0" layoutY="54.0" prefHeight="25.0" prefWidth="305.0" text="Owner Name" textAlignment="CENTER" />
+      <Label fx:id="invoiceShopAddressLabel" layoutX="581.0" layoutY="79.0" prefHeight="20.0" prefWidth="305.0" text="Address" textAlignment="CENTER" />
+      <Label fx:id="invoiceContactLabel" layoutX="581.0" layoutY="99.0" prefHeight="20.0" prefWidth="305.0" text="Contact" textAlignment="CENTER" />
+      <Separator layoutX="14.0" layoutY="123.0" prefHeight="0.0" prefWidth="1275.0" />
+      <Label fx:id="invoiceCustomerNameLabel" layoutX="30.0" layoutY="133.0" prefHeight="20.0" prefWidth="110.0" text="Customer Name" />
+      <Label fx:id="invoiceCustomerAddressLabel" layoutX="30.0" layoutY="169.0" prefHeight="20.0" prefWidth="110.0" text="Customer Address" />
+      <Label fx:id="invoiceCustomerContactLabel" layoutX="30.0" layoutY="196.0" prefHeight="20.0" prefWidth="110.0" text="Customer Contact" />
+      <TextField fx:id="invoiceCustomerNameTextField" layoutX="170.0" layoutY="131.0" prefHeight="20.0" prefWidth="300.0" />
+      <Label fx:id="invoiceAddressLabel" layoutX="170.0" layoutY="169.0" prefHeight="20.0" prefWidth="300.0" text="Address " />
+      <Label fx:id="invoiceCustomerContactInfoLabel" layoutX="170.0" layoutY="196.0" prefHeight="20.0" prefWidth="300.0" text="Contact Information" />
+      <Label fx:id="invoiceInvoiceNumberLabel" layoutX="637.0" layoutY="133.0" prefHeight="20.0" prefWidth="110.0" text="Invoice Number" />
+      <Label fx:id="invoiceDateLabel" layoutX="636.0" layoutY="169.0" prefHeight="20.0" prefWidth="110.0" text="Date" />
+      <Label fx:id="invoiceTimeLabel" layoutX="636.0" layoutY="196.0" prefHeight="20.0" prefWidth="110.0" text="Time" />
+      <Separator layoutX="13.0" layoutY="216.0" prefHeight="0.0" prefWidth="1275.0" />
+      <Label fx:id="invoiceSearchLabel" layoutX="30.0" layoutY="228.0" prefHeight="20.0" prefWidth="110.0" text="Search" textAlignment="CENTER">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="invoiceSearchProductNameComboBox" editable="true" layoutX="170.0" layoutY="226.0" prefHeight="20.0" prefWidth="200.0" promptText="Product Name" visibleRowCount="15" />
+      <ComboBox fx:id="invoiceSearchCompanyNameComboBox" editable="true" layoutX="391.0" layoutY="226.0" prefHeight="20.0" prefWidth="200.0" promptText="Company Name" />
+      <TextField fx:id="invoiceSearchQuantityTextField" layoutX="637.0" layoutY="227.0" prefWidth="100.0" promptText="Quantity" />
+      <Label fx:id="invoiceSearchProductDetailsLabel" layoutX="781.0" layoutY="229.0" prefHeight="20.0" prefWidth="300.0" text="Product Details" />
+      <Button fx:id="invoiceSearchAddButton" layoutX="1139.0" layoutY="227.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="100.0" text="ADD" />
+      <TableView layoutX="15.0" layoutY="258.0" prefHeight="381.0" prefWidth="938.0">
+        <columns>
+          <TableColumn prefWidth="56.999969482421875" text="Item No" />
+          <TableColumn prefWidth="415.0" text="Product Name" />
+            <TableColumn prefWidth="115.0" text="Quantity" />
+            <TableColumn prefWidth="95.0" text="Unit Price" />
+            <TableColumn prefWidth="102.0" text="Amount" />
+            <TableColumn prefWidth="75.0" text="Discount" />
+            <TableColumn prefWidth="75.0" text="Delete" />
+        </columns>
+      </TableView>
+      <Label fx:id="invoiceSubTotalLabel" layoutX="1017.0" layoutY="333.0" prefHeight="25.0" prefWidth="100.0" text="Sub Total" />
+      <Label fx:id="invoiceDiscountLabel" layoutX="1017.0" layoutY="373.0" prefHeight="25.0" prefWidth="100.0" text="Discount" />
+      <Label fx:id="invoiceGrandTotalLabel" layoutX="1017.0" layoutY="411.0" prefHeight="25.0" prefWidth="100.0" text="Grand Total">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="invoiceCashPaidLabel" layoutX="1017.0" layoutY="449.0" prefHeight="25.0" prefWidth="100.0" text="Cash Paid">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="invoiceCashBackLabel" layoutX="1017.0" layoutY="485.0" prefHeight="25.0" prefWidth="100.0" text="Cash Back" />
+      <Label fx:id="invoiceDueLabel" layoutX="1017.0" layoutY="525.0" prefHeight="25.0" prefWidth="100.0" text="DUE" textFill="RED">
+         <font>
+            <Font name="Arial Black" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="invoiceTotalAmountLabel" layoutX="1139.0" layoutY="333.0" prefHeight="25.0" prefWidth="110.0" text="Total amount" />
+      <TextField fx:id="invoiceDiscountTextField" layoutX="1135.0" layoutY="373.0" prefHeight="25.0" prefWidth="110.0" />
+      <Label fx:id="invoiceGrandTotalAmountLabel" layoutX="1135.0" layoutY="411.0" prefHeight="25.0" prefWidth="110.0" text="Grand total amount" />
+      <TextField fx:id="invoiceCashPaidTextField" layoutX="1135.0" layoutY="449.0" prefHeight="25.0" prefWidth="110.0" />
+      <Label fx:id="invoiceBackAmountLabel" layoutX="1139.0" layoutY="485.0" prefHeight="25.0" prefWidth="110.0" text="back amount" />
+      <Label fx:id="invoiceDueAmountLabel" layoutX="1139.0" layoutY="525.0" prefHeight="25.0" prefWidth="110.0" text="due amount" />
+      <Button fx:id="invoiceCheckOutButton" layoutX="1005.0" layoutY="597.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="125.0" text="CHECK OUT" textFill="GREEN">
+         <font>
+            <Font name="Arial Bold" size="16.0" />
+         </font>
+      </Button>
+      <Button fx:id="invoiceCancelButton" layoutX="1160.0" layoutY="597.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="125.0" text="CANCEL" textFill="RED">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Button>
+      <Separator layoutX="13.0" layoutY="637.0" prefHeight="20.0" prefWidth="1275.0" />
+   </children>
+</AnchorPane>

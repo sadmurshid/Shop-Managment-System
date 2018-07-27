@@ -10,29 +10,36 @@ import javafx.stage.Stage;
 import javafx.util.Duration;
 
 import java.io.File;
+import java.sql.DriverManager;
 
 public class Main extends Application {
 
-    Stage primaryStage;
+    private Stage primaryStage;
 
     @Override
-    public void start(Stage primaryStage) throws Exception{
+    public void start(Stage primaryStage) {
 
         try {
-            Runtime.getRuntime().exec("F:\\Work\\Shop Managment System\\src\\database\\start.bat", null, new File("F:\\Work\\Shop Managment System\\src\\database\\"));
+            Runtime.getRuntime().exec("cmd /c start F:\\Work\\\"Shop Managment System\"\\src\\database\\start.bat", null, new File("F:\\Work\\Shop Managment System\\src\\database\\"));
 //        Thread.sleep(5000);
-            database d = new database("jdbc:mysql://localhost:3311/", "root", "root");
+//            ProcessBuilder p = new ProcessBuilder();
+//            System.out.println("Started EXE");
+//            p.command("F:\\Work\\Shop Managment System\\src\\database\\start.bat");
+//            p.start();
+
+
+            project.database d = new project.database("jdbc:mysql://localhost:3311", "root", "root");
+
 
             splash();
 
             this.primaryStage = primaryStage;
         } catch(Exception e){
-            System.out.println(e.getCause());
             e.printStackTrace();
         }
     }
 
-    private void splash() throws Exception
+    private void splash()
     {
         try {
             Stage window = new Stage();
@@ -53,9 +60,7 @@ public class Main extends Application {
 
             fadeIn.play();
 
-            fadeIn.setOnFinished((e) -> {
-                fadeOut.play();
-            });
+            fadeIn.setOnFinished((e) -> fadeOut.play());
             fadeOut.setOnFinished((e) -> {
                 try {
                     window.close();
@@ -76,7 +81,7 @@ public class Main extends Application {
         }
     }
 
-    private void loginPage() throws Exception
+    private void loginPage()
     {
 
         try {
@@ -88,7 +93,6 @@ public class Main extends Application {
             primaryStage.show();
         }catch (Exception e)
         {
-            System.out.println(e.getCause());
             e.printStackTrace();
         }
 
