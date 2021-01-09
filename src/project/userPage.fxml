@@ -4,11 +4,14 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
-<BorderPane fx:id="borderPaneUserPage" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="600.0" prefWidth="900.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.userPageController">
+<BorderPane fx:id="borderPaneUserPage" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="600.0" prefWidth="900.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.userPageController">
    <top>
       <HBox maxHeight="99.0" prefHeight="90.0" prefWidth="900.0" BorderPane.alignment="CENTER">
          <children>
@@ -54,7 +57,7 @@
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </VBox.margin>
             </Button>
-            <Button id="userInventoryButton" fx:id="userPageInventoryButton" minWidth="160.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="160.0" text="INVENTORY">
+            <Button id="userInventoryButton" fx:id="userPageInventoryButton" minWidth="160.0" mnemonicParsing="false" onAction="#setUserPageInventoryButton" prefHeight="25.0" prefWidth="160.0" text="INVENTORY">
                <padding>
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </padding>
@@ -62,7 +65,7 @@
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </VBox.margin>
             </Button>
-            <Button fx:id="userPageAddProductButton" minWidth="160.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="160.0" text="ADD PRODUCT">
+            <Button fx:id="userPageBuyProductButton" minWidth="160.0" mnemonicParsing="false" onAction="#setUserPageBuyProductButton" prefHeight="25.0" prefWidth="160.0" text="BUY PRODUCT">
                <padding>
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </padding>
@@ -70,17 +73,17 @@
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </VBox.margin>
             </Button>
-            <Button fx:id="userPageNewProductButton" minWidth="160.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="160.0" text="NEW PRODUCT">
+            <Button fx:id="userPageNewProductButton" minWidth="160.0" mnemonicParsing="false" onAction="#setUserPageNewProductButton" prefHeight="25.0" prefWidth="160.0" text="NEW PRODUCT">
                <VBox.margin>
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </VBox.margin>
             </Button>
-            <Button fx:id="userPageAddCompanyButton" minWidth="160.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="160.0" text="ADD COMPANY">
+            <Button fx:id="userPageAddCompanyButton" minWidth="160.0" mnemonicParsing="false" onAction="#setUserPageAddCompanyButton" onKeyPressed="#setUserPageAddCompanyButton" prefHeight="25.0" prefWidth="160.0" text="ADD COMPANY">
                <VBox.margin>
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </VBox.margin>
             </Button>
-            <Button fx:id="userPageAddSrButton" minWidth="160.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="160.0" text="ADD S.R.">
+            <Button fx:id="userPageAddSrButton" minWidth="160.0" mnemonicParsing="false" onAction="#setUserPageAddSrButton" prefHeight="25.0" prefWidth="160.0" text="ADD S.R.">
                <VBox.margin>
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </VBox.margin>
@@ -127,4 +130,17 @@
          </BorderPane.margin>
       </HBox>
    </bottom>
+   <center>
+      <GridPane fx:id="borderPaneCenterGridpane" BorderPane.alignment="CENTER">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="107.0" minHeight="10.0" prefHeight="31.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="386.0" minHeight="10.0" prefHeight="386.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="147.0" minHeight="0.0" prefHeight="0.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+      </GridPane>
+   </center>
 </BorderPane>
